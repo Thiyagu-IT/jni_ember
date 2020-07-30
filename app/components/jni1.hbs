@@ -1,0 +1,33 @@
+
+<h2>{{@title}}</h2>
+
+
+<form onsubmit={{action 'folderSearch'}}>
+  <Input @value={{this.folder_path}} placeholder="enter folder path"/>
+  <Input @value={{this.pattern}} placeholder="enter pattern"/>
+  <button type="submit">
+    Folder Search
+  </button>
+
+  <div id="q" ></div>
+
+</form>
+<h1>-------------</h1>
+<ul>
+{{#each treePath as |a|}}
+    <li>{{ a}}</li>
+{{/each}}
+</ul>
+
+
+{{#each items}} {{! Each item is an "li" }}
+  <li>
+    {{name}}
+    {{#if items}} {{! Within the context of the current item }}
+    <ul>
+      {{partial list}} {{! Recursively render the partial }}
+      
+    </ul>
+    {{/if}}
+  </li>
+  {{/each}}

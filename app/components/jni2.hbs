@@ -1,0 +1,38 @@
+<style>
+    span{
+        color: red;
+    }
+</style>
+<h2>{{@title}}</h2>
+
+<form onsubmit={{action 'keywordSearch'}} id="myForm">
+    <Input @value={{this.file_name}} placeholder="enter file name"/>
+    <Input @value={{this.file_path}} placeholder="enter file path"/>
+    <Input  autocomplete="off" list="auto" @value={{this.keyword}} placeholder="enter keyword" onfocus={{action 'autoComplete' }}/><br><br>
+    <datalist id="auto">
+        {{#each this.result as |a|}}
+            <option>{{a}}</option>
+        {{/each}}
+    </datalist>
+        
+    <Input @value={{this.end_line}} placeholder="enter end keyword "/>
+    <button type="submit">
+        Folder Search
+    </button>
+    <div id="q"> </div>
+    
+   
+
+</form>
+<br>
+<table>
+
+{{#each content as |row|}}
+    <tr>
+        <td id="w">
+            {{{ row }}}
+        </td>
+    </tr>
+{{/each}}
+</table>
+

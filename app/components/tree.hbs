@@ -1,0 +1,16 @@
+<h3>{{@treeContent}}</h3>
+<ul id = "myUL">
+     {{#each-in @treeContent as |category products|}}
+    
+      
+        {{#each products as |product|}}
+          <li><span class="arrow">{{product}}</span></li>
+          <ul></ul>
+        {{/each}}
+      
+    
+  {{/each-in}}
+    {{#each @treeContent.people}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>

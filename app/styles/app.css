@@ -1,0 +1,47 @@
+ul, #myUL {
+    list-style-type: none; /*avoid defalut pointer of li*/
+    color:blue;
+  }
+  
+  #myUL {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    
+  }
+  
+  .arrow::before {
+    content: "\276f";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .arrow-down::before {
+    transform: rotate(90deg);  
+  }
+  
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+  .details {
+    color: black;
+  }
+  table, td {
+    border-collapse: collapse;
+    padding: 2%;
+  }
+  tr {
+    border: 2px solid black;
+  }
+  
+  span{
+    color: red;
+  }

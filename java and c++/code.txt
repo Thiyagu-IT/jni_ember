@@ -1,0 +1,628 @@
+File name: 
+code.txt
+File path: 
+C:\Users\HI\Documents\jni_task bytes
+File Size: 
+28672 bytes
+Date created: 
+18/6/2020 , 5:52
+Date last Accessed:
+25/6/2020 7:54
+Date last Modified:
+25/6/2020 , 7:53
+one_Lineone_Line
+
+C:/Users/HI/Documents/jni_task/
+C:\Users\HI\Documents\jni_task
+
+g++ -I"%JAVA_HOME%\include" -I"%JAVA_HOME%\include\win32" -shared -o hello.dll HelloJNI.cpp
+
+javac HelloJNI.java
+> javah HelloJNI
+
+javac -h . HelloJNI.java
+
+---------------------------------------------
+'<a onclick= "generate("'+index+'")" href="javascript:void(0);" >"'+element+'"</a>' +"<br>" + sp;
+<form onsubmit={{action 'generate'}}>
+  <div id="qq" class="content"> {{this.content}}</div>
+</form>
+<a href='C:/Users/HI/Documents/jni_task/Metadata_Folder/ember-java_meta.txt'>
+
+netstat -ano
+taskkill /pid 1536 /f
+
+{"type":"default","status":200,"ok":true,"statusText":"","headers":{"map":{"access-control-allow-origin":"http://localhost:4200","content-length":"1385","content-type":"application/json;charset=UTF-8"}},"url":"http://localhost:8080/JniEmber/folderSearch","bodyUsed":false,"_bodyInit":{},"_bodyBlob":{}}
+
+import Route from '@ember/routing/route';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import Model, { attr } from '@ember-data/model';
+import DS from 'ember-data';
+import jQuery from 'jquery'; 
+import { inject as service } from '@ember/service';
+
+export default class PeopleListComponent extends Component {
+    @tracked folder_path;
+    @tracked pattern;
+    @action
+    
+    createMessage(){
+      if(this.folder_path == "" || this.pattern == "")
+      {
+          alert("Please add all fields")
+          return;
+      }
+      if(/^([A-Za-z]:)(\\[A-Za-z_\-0-9\.\s]+)+$/.test(this.folder_path))
+      {
+        console.log("Successs...")
+        console.log(this.folder_path + " " + this.pattern);
+        jQuery.ajax({
+          url: "api.openweathermap.org/data/2.5/weather?id=2172797",
+          type: "POST",
+          contentType: "applicatio/json; charset=utf-8",
+          dataType: 'json',
+          data: JSON.stringify({
+            "folderPath" : this.folder_path,
+            "pattern" : this.pattern
+        })
+      }).then((response) =>{
+          console.log("Resppp.." + response)
+
+      }).catch(function(err){
+        console.log("Err"+ JSON.stringify(err));
+      })
+      //.catch(err => console.log("Errr.." + JSON.stringify(err)))
+      //return
+      }
+      alert("Enter valid path!...")
+      }    
+}
+-------------------------------------------------------------------
+
+        websockets: service()
+        socketRef: null
+        const socket = this.websockets.socketFor('ws://localhost:8080/');
+        socket.send({name: this.folder_path, pattern: this.pattern}, true);
+        
+
+
+
+
+var exampleSocket = new WebSocket("wss://localhost:8080");
+        exampleSocket.onopen = function (event) {
+          exampleSocket.send("Here's some text that the server is urgently awaiting!"); 
+        };
+
+websockets= service();
+        socketRef= null;
+        this._super(...arguments);
+        const socket = this.websockets.socketFor('ws://localhost:8080/');
+        socket.send({name: this.folder_path, pattern: this.pattern}, true);
+        
+
+
+jQuery.ajax({
+          url: 'http://localhost:8080/api/v1/person',
+          type: "POST",
+          dataType: 'text',
+          data: JSON.stringify({
+            name: "Thiyagu"
+        })
+      }).then((response) =>{
+          console.log("Resppp.." + response)
+
+      }).then(resp => console.log("Res.. " + resp))
+
+      .catch(err => console.log("Errr.." + err))
+
+
+
+<Jni1 @title="Folder Search" />
+
+jQuery.ajax({
+          url: "http://localhost:8080/api/v1/person",
+          type: "POST",
+          contentType: "applicatio/json; charset=utf-8",
+          dataType: 'json',
+          data: JSON.stringify({
+            "name": "Thiyagu1"
+        })
+      }).then((response) =>{
+          console.log("Resppp.." + response)
+
+
+      })
+
+      .catch(err => console.log("Errr.." + JSON.stringify(err)))
+
+        
+        return
+
+
+------------
+      var isValid = require('is-valid-path');
+      if(isValid(this.folder_path))
+        alert(this.folder_path)
+		
+		
+    "jquery": "^3.5.1",
+/* ajax: Ember.inject.service(),
+      Ember.$.ajax({
+        url: 'http://localhost:8080/api/v1/person',
+        type: "POST",
+        data: JSON.stringify({
+          name: this.folder_path,
+        })
+      }).then(function(resp){
+          console.log("Resppp.." + resp)
+      }).catch(function(error){
+        console.log("Err.." + error)
+      });*/
+
+fetch("/api/v1/person",{
+      method: "post",
+      headers:{
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          name: this.folder_path,
+         // pattern: this.pattern
+      })
+  }).then(res=> res.json())
+  .then(data => {
+    alert("Hii")
+    console.log(data)
+  })
+  .catch(err => console.log("ERRorrr" + err))
+
+
+<form>
+<form {{on "submit" this.createMessage}}>
+  <input>
+  <Input @value={{this.message}}>
+  <button type="submit">
+    Send
+  </button>
+</form>
+
+{{input value = textValue}}
+<button {{action 'search' textValue}}>Search</button><br>
+
+
+ public static void generateOutput1(char one_Char) { 
+		//System.out.print(one_Char);
+		try{
+		FileWriter output_Writer = new FileWriter("Output.txt", true);
+		output_Writer.write(one_Char);
+		output_Writer.close();
+		}
+		catch (IOException e) {
+		System.out.println("An error occurred.");
+		e.printStackTrace();
+		
+		}
+     }
+	 
+	 
+	 
+<ul>
+  {{#each @people as |person|}}
+    <li>
+      <button type="button" {{on 'click' (fn this.showPerson person)}}>{{person}}</button>
+    </li>
+  {{/each}}
+</ul>
+<form {{action "doSomething" on="submit"}}>
+    {{input type="text" value=foobar}}
+    <button type="submit">Save</button>
+</form>
+
+	 
+	 
+	 "ember-cli-sass": "^10.0.1",
+	 
+	 
+	 
+	 public static boolean isValidPath(String path) {
+    try {
+        Paths.get(path);
+    } catch (InvalidPathException | NullPointerException ex) {
+        return false;
+    }
+    return true;
+}
+	 
+method : "post",
+            headers={
+                "Content-Type": "application/json"
+            },
+            body= JSON.stringify({
+                folder_path : this.folder_path,
+                pattern : this.pattern
+            })
+            alert("........")
+			
+			.then(res=> res.json())
+            .then(data=>{
+            //console.log("Data "+ data.user.email)
+            if(data.error){
+                alert("Error>.......")
+            }
+            else{
+               
+                localStorage.setItem("user", JSON.stringify(data.user))
+                }
+    });
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 /////////////////////////
+	 
+	 
+	 
+	 
+	 #include <jni.h>      
+#include <iostream>    
+#include <dirent.h>
+#include <string> 
+#include <fstream>
+#include <Windows.h> 
+#include <cstddef> 
+#include<sstream>
+#include "main.h"  
+using namespace std;
+
+void link_with_JavaCode(string line, JNIEnv *env)
+{
+	
+	jclass output_class = env->FindClass("Main");
+	
+	try
+	{
+		jmethodID id = env->GetMethodID(output_class,"<init>", "(I)V");
+		jobject myobj = env->NewObject(output_class, id, 9);
+		jmethodID show = env->GetMethodID(output_class, "sendOutput", "(Ljava/lang/String;)V");
+		
+		jstring jStringParam = env->NewStringUTF(line.c_str());
+		
+
+		env->CallVoidMethod(myobj, show, jStringParam);
+		
+	}
+	catch(...)
+	{
+		cout<<"Error ..."<<endl;
+	}
+	
+}
+void files(string path,string name)
+{
+    WIN32_FILE_ATTRIBUTE_DATA fileInfo;
+	string nameCopy = name;
+	//reverse(name.begin(),name.end());
+	
+	
+	mkdir((path + "Metadata_Folder").c_str()); 
+	
+	//cout<<endl<<endl<<"Directory  "<< path + "Metadata_Folder"<<endl<<endl;
+	
+    if(GetFileAttributesEx(path.c_str() , GetFileExInfoStandard, &fileInfo))
+    {
+		
+        fstream file;
+        file.open( path+"Metadata_Folder\\" + name + "_meta.txt", ios::trunc | ios::out );
+        SYSTEMTIME stSystemTime;
+        int  fileSize = fileInfo.nFileSizeLow;
+        file<<"File name: \n"<<nameCopy<<endl;
+        file<<"File path: \n"<<path<<endl;
+        file<<"File Size: \n"<<fileSize<<" bytes"<<endl;
+        if(FileTimeToSystemTime(&fileInfo.ftCreationTime, &stSystemTime) )
+            file<<"Date created: "<<"\n"<<stSystemTime.wDay<<"/"<<stSystemTime.wMonth<<"/"<<stSystemTime.wYear<<" , "<<stSystemTime.wHour<<":"<<stSystemTime.wMinute<< endl;
+        if( FileTimeToSystemTime(&fileInfo.ftLastAccessTime, &stSystemTime) )
+            file<<"Date last Accessed:"<<"\n"<<stSystemTime.wDay<<"/"<<stSystemTime.wMonth<<"/"<<stSystemTime.wYear<<" "<<stSystemTime.wHour<<":"<<stSystemTime.wMinute<< endl;
+        if(FileTimeToSystemTime(&fileInfo.ftLastWriteTime, &stSystemTime) )
+            file<<"Date last Modified:"<<"\n"<<stSystemTime.wDay<<"/"<<stSystemTime.wMonth<<"/"<<stSystemTime.wYear<<" , "<<stSystemTime.wHour<<":"<<stSystemTime.wMinute<< endl;
+		
+	}
+    else
+        cout<<"file not found"<<endl;
+
+}
+void generatingOutput()
+void list_dir(const char *path, const char *pattern, JNIEnv *env) {
+   struct dirent *entry;
+   DIR *dir = opendir(path);
+   if (dir == NULL) {
+	   cout<<"Invalid path"<<endl;
+      return;
+   }
+   while ((entry = readdir(dir)) != NULL) {
+	   
+	   string name = entry->d_name;
+	   int found = name.find(pattern);
+	   if(found>=0)
+	   {
+		   files(path,name);
+	   }
+   }
+   /////////////////////////////////////////////////////
+   string finalFolder = "Metadata_Folder";
+   string a= path; 
+   
+   string finalPath = a + finalFolder;
+   //path[strlen(path)] = "Metadata_Folder";
+   //strcat(path, finalFolder);
+   //const char* outputPath = (path + finalFolder).c_str();
+   dir = opendir(finalPath.c_str());
+   cout<<endl<<"Final path .. "<< finalPath<<endl<<endl;
+   if (dir == NULL) {
+	   cout<<"Invalid path"<<endl;
+      return;
+   }
+   string output="";
+   while ((entry = readdir(dir)) != NULL) {
+	   
+	   string name = entry->d_name;
+	   ostringstream ss;
+	 //  cout<<"!! Output reading !! : "<<finalPath+"\\"+name<<endl;
+	   
+	   ifstream f(finalPath+"\\"+name);
+	   if(f)
+	   {
+		   ss << f.rdbuf();
+		   output += ss.str();
+	       output += "\n----------------------\n\n";
+	   }
+	   
+   }
+   
+   cout<<endl<<"Output!!!!!!!!!!!!"<<endl <<endl<<output <<endl;
+   link_with_JavaCode(output, env);
+   closedir(dir);
+}
+
+
+JNIEXPORT void JNICALL Java_Main_folderSearch(JNIEnv *env, jobject thisObj,jstring folder_path, jstring pattern) {
+	
+	char* cname;
+	const char *folderPath = env->GetStringUTFChars(folder_path, NULL);
+	const char *pattern_match = env->GetStringUTFChars(pattern, NULL);
+	cout<<"Folder Path "<<folderPath<<" Pattern "<<pattern_match<<endl;
+	
+	list_dir(folderPath,pattern_match, env);
+   return;
+}
+
+/*
+char tofind = '.';
+	int last_occ = name.find_last_of(tofind);
+	//int found = name.find(tofind); 
+  	name.erase(last_occ);
+	name += "_metadataFile.txt";
+  	cout<<"Output File name : "<<name<<"..."<<nameCopy<<endl;
+	cout<<"File ppath "<< path+name<<endl;
+*/
+
+
+
+ // $test = jQuery('.content').html();
+           // alert(JSON.stringify(element))
+            //console.log(JSON.stringify(element))
+            //re = new RegExp(this.keyword,"gi");
+            //$('#q').html(html.replace(/this.keyword/gi, "<span style=color: hotpink >" + this.keyword + "</span>"));
+
+
+  <h1>{{this.folder_path}}</h1>
+  {{#external-link href="http://www.google.com"}}
+    Wow!
+  {{/external-link}}<br>
+  <a href='http://www.google.com'> example </a><br>
+  
+  <a href="C:\Users\HI\Documents\jni_task">Link 1</a>
+  
+  {{#each this.tree as |linkk|}}
+    <h3>{{linkk}}</h3>
+  {{/each}}
+  --------------------------
+  fileName.forEach(element => {
+              treeResult += "<a href='file:///C:/Users/HI/Documents/jni_task/Metadata_Folder/ember-java_meta.txt'>"+element+"</a>" + "<br>" + sp;
+            })
+			
+	-----------		------------------------
+  
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import jQuery from 'jquery'; 
+
+export default class Jni1 extends Component {
+    @tracked folder_path;
+    @tracked pattern;
+    @tracked content;
+    //@tracked tree;
+    result;
+    @action
+    
+    folderSearch(event){
+      event.preventDefault();
+      if(this.folder_path == "" || this.pattern == "")
+      {
+          alert("Please add all fields")
+          return;
+      }
+      if(/^([A-Za-z]:)(\\[A-Za-z_\-0-9\.\s]*)*$/.test(this.folder_path))
+      {
+        console.log("Successs...")
+        console.log(this.folder_path + " " + this.pattern);
+        
+        jQuery.ajax({
+          url: "http://localhost:8080/JniEmber/folderSearch",
+          type: "POST",
+          contentType: "applicatio/json; charset=utf-8",
+          dataType: 'json',
+          data: JSON.stringify({
+            "folderPath": this.folder_path,
+            "pattern": this.pattern
+        })
+      }).then((response) =>{
+          if(response == "")
+          {
+            document.getElementById("q").innerHTML = "No matching found";
+            //return
+          }
+          else{
+            console.log( response );
+           //  content = response
+            var res = response.split("----------------------");
+            alert(res)
+            this.result = res;
+            if(res == "Enter valid path")
+            {
+              document.getElementById("q").innerHTML = "Enter valid path";
+              return;
+            }
+            console.log(res[0]+"\n\n\n")
+            var ress = "<br>";
+            res.forEach(element => {
+              ress += element + "<br><br>"
+            });
+            var tree = this.folder_path.split("\\")
+            var format = "\t";
+            var treeResult=""
+            var sp=""
+            tree.forEach(element => {
+              treeResult += "<u style= color:blue>"+element+"</u>"
+              var len = element.length;
+              console.log("length" + len);
+              for(var i=0; i<len; i++)
+                sp += "&nbsp";
+              treeResult += "<br>" + sp;
+              console.log("\n!" + treeResult + "!\n")
+
+            });
+           // sp +=sp;
+            var fileName = res[0].split("\n");
+            var index = 1;
+            fileName.forEach(element => {
+              //treeResult += '<button onclick= generate("'+ index +'")>'+element+'</button>' + "<br>" + sp;
+              treeResult += '<form onsubmit={{action 'generate()'}}>'</form>
+              index++;
+            })
+           // var ress = res[0] + "<br><br>\t" + res[1];
+            console.log(ress)
+            
+            document.getElementById("qq").innerHTML = treeResult;
+            document.getElementById("q").innerHTML = ress;
+           //content = ress;
+            //document.getElementById("q").innerHTML = "Hiiiiiiiiiiiiii";
+            console.log(tree)
+            console.log(treeResult)
+            console.log("!" + sp + "!")
+            console.log(fileName[0])
+          }
+          
+      })
+      .catch(err => {
+        console.log("Errr.." + JSON.stringify(err))
+      })
+
+      //.catch(err => console.log("Errr.." + JSON.stringify(err)))
+      return
+      }
+    
+      else{
+        alert("Enter valid path!...")
+      }
+      
+
+      } 
+      @action
+      generate(event)
+    {
+      alert(this.result[1])
+     
+      alert(JSON.stringify(event))
+      document.getElementById("q").innerHTML = event;
+      alert("kkkkkkkkk"+ event.target.value)
+      event.preventDefault();
+    }
+      
+}
+
+----------------
+
+
+<ul>
+	<li><span class='caret'>C:<span>
+	<ul>
+		<li><span class='caret'>Users<span>
+			<ul>
+				<li><span class='caret'>HI<span>
+					<ul>
+						<li><span class='caret'>Documents<span>
+							<ul>
+								<li><span class='caret'>jni_task<span>
+							</ul></li>
+				</ul></li>
+			</ul></li>
+		</ul></li>
+	</ul></li>
+	
+	
+	
+	<ul id="myUL">
+  <li><span class="caret">Beverages</span>
+    <ul class="nested">
+      <li>Water</li>
+      <li>Coffee</li>
+      <li><span class="caret">Tea</span>
+        <ul class="nested">
+          <li>Black Tea</li>
+          <li>White Tea</li>
+          <li><span class="caret">Green Tea</span>
+            <ul class="nested">
+                 <li><span class="caret">Beverages</span>
+                 	<ul class="nested">
+          				<li>Black Tea</li>
+                    </ul>
+				 <li><span class="caret">Beverages</span>
+ 				 <li><span class="caret">Beverages</span>
+				 <li><span class="caret">Beverages</span>
+			  </li>
+              </li>
+              </li>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul>
+	
+	  {{#each-in this.categories as |category products|}}
+    <li>{{category}}
+      <ol>
+        {{#each products as |product|}}
+          <li>{{product}}</li>
+        {{/each}}
+      </ol>
+    </li>
+  {{/each-in}}
+	
+	
+    categories = {
+      'Bourbons': ['Bulleit', 'Four Roses', 'Woodford Reserve'],
+      'Ryes': ['WhistlePig', 'High West']
+    }; 
+	
+	
+
+	 
